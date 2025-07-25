@@ -311,9 +311,9 @@ def main():
     try:
         # Initialize crawler with Playwright
         crawler = NewsdayCrawler(headless=True)
-        
-        # Crawl 15 years of data with 2 concurrent workers (reduced for stability)
-        crawler.crawl_historical_data(years_back=15, max_workers=2, delay=0.5)
+
+        # Crawl 15 years of data with 5 concurrent workers
+        crawler.crawl_historical_data(years_back=15, max_workers=5, delay=0.5)
         
         # Save results
         results = crawler.save_data()
